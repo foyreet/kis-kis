@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-indigo-50 to-blue-100;
+    @apply text-gray-800;
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  /* Animation for dice roll */
+  @keyframes dice-roll {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .animate-dice {
+    animation: dice-roll 0.3s ease-in-out infinite;
+  }
+  
+  /* Animation for player token */
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+  }
+  
+  .animate-pulse-ring {
+    animation: pulse-ring 2s ease-in-out infinite;
+  }
+}
